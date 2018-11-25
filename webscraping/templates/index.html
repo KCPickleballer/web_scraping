@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Mission To Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data<!--</Datal>--></a></p>
+
+        </div>
+    </div>
+
+             
+
+        {% for forecast in forecasts%}
+        <div class="container"
+            <div class="row"> 
+                <h2 >Latest Mars News</h2>
+                
+                <div class="col-lg-12" id="news_title">{{forecast.mars_news_title}}</div>
+                <div class="col-lg-12" id="news_para">{{forecast.mars_news_para}}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id='featured_img'>
+                            <h3>{{forecast.featured_img_title}}</h3>
+                            <img id="featureed_image" src="{{forecast.featured_img}}"></img>
+                    </div> 
+                </div>
+
+                <div class="col-lg-6">
+                    <div id='mars_weather'>
+                        <h4 class="card-title">Mars Weather</h4>
+                        <h4 class="card-subtitle mb-2 text-muted">{{forecast.weather}}</h4>
+                    </div> 
+                
+                    <div id='mars_fact_table'>{{forecast.fact_tbl|safe}}</div>
+                </div>    
+            </div>
+        </div>
+
+             <div id='featured_img_continer'>
+                 <h3>Mars Hemispheres</h3>
+                <div id='hem1_box'>
+                    <img class="hem_image" src="{{forecast.hem1_img}}"></img>
+                    <h3>{{forecast.hem1_title}}</h3>
+                </div>
+                
+                <div id='hem2_box'>
+                        <img class="hem_image" src="{{forecast.hem2_img}}"></img>
+                        <h3>{{forecast.hem2_title}}</h3>
+                        
+                </div>
+                <div id='hem3_box'>
+                        <img class="hem_image" src="{{forecast.hem3_img}}"></img>
+                        <h3>{{forecast.hem3_title}}</h3>
+                        
+                 </div>
+                 <div id='hem4_box'>
+                            <img class="hem_image" src="{{forecast.hem4_img}}"></img>
+                            <h3>{{forecast.hem4_title}}</h3>
+                            
+                  </div>
+
+             </div>                      
+     
+            
+        {% endfor %}
+
+
+    
+
+
+</body>
+
+</html>
